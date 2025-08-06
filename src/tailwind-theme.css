@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(43.9% 0 0);
+  --color-secondary: oklch(55.3% 0.013 58.071);
+  --color-white: oklch(100% 0 0);
+  --color-info: oklch(48.8% 0.243 264.376);
+  --color-success: oklch(79.2% 0.209 151.711);
+  --color-warning: oklch(85.2% 0.199 91.936);
+  --color-danger: oklch(70.4% 0.191 22.216);
+
+  --color-grade-excellent: oklch(54.6% 0.245 262.881);
+  --color-grade-good: oklch(79.2% 0.209 151.711);
+  --color-grade-fair: oklch(85.2% 0.199 91.936);
+  --color-grade-poor: oklch(70.4% 0.191 22.216);
+  --color-grade-very-poor: oklch(70.4% 0.191 22.216);
+  --color-border-info: oklch(48.8% 0.243 264.376);
+  --color-no-grade: oklch(98.4% 0.004 240);
+
+  /* Default colors which can be exchanged to something else during application grows */
+  /* Just find place where you want to use it and exchange names */
+
+  --color-gray-50: oklch(98% 0 0);
+  --color-gray-100: oklch(96% 0 0);
+  --color-gray-200: oklch(90% 0 0);
+  --color-gray-300: oklch(83% 0 0);
+  --color-gray-500: oklch(66% 0 0);
+  --color-gray-600: oklch(56% 0 0);
+  --color-gray-700: oklch(45% 0 0);
+  --color-gray-800: oklch(35% 0 0);
+  --color-gray-900: oklch(20% 0 0);
+
+  --color-neutral-50: oklch(98% 0 0);
+  --color-neutral-100: oklch(96% 0 0);
+  --color-neutral-200: oklch(90% 0 0);
+  --color-neutral-800: oklch(35% 0 0);
+
+  --color-blue-50: oklch(96% 0.013 240);
+  --color-blue-100: oklch(92% 0.043 240);
+  --color-blue-200: oklch(84% 0.085 240);
+  --color-blue-500: oklch(65% 0.15 240);
+  --color-blue-600: oklch(55% 0.16 240);
+  --color-blue-700: oklch(48% 0.14 240);
+
+  --color-red-50: oklch(96% 0.013 15);
+  --color-red-300: oklch(78% 0.12 15);
+  --color-red-500: oklch(68% 0.18 15);
+  --color-red-600: oklch(62% 0.19 15);
+  --color-red-700: oklch(55% 0.18 15);
+  --color-red-800: oklch(48% 0.16 15);
+
+  --color-green-600: oklch(55% 0.16 140);
+  --color-green-700: oklch(48% 0.14 140);
+}
