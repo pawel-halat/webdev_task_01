@@ -8,7 +8,7 @@ const MapPage = lazy(() => import("../../pages/map-page"));
 const RoadStatisticsPage = lazy(
   () => import("../../pages/road-statistics-page")
 );
-const TodoTablePage = lazy(() => import("../../pages/todo-table-page"));
+const TodoPage = lazy(() => import("../../pages/todo-page"));
 const ErrorTestPage = lazy(() => import("../../pages/error-test-page"));
 const NotFound = lazy(() => import("../../pages/not-found"));
 
@@ -18,7 +18,7 @@ const AppRouter: FC = () => {
       <Route path={routes.home} element={<HomePage />} />
       <Route path={routes.map} element={<MapPage />} />
       <Route path={routes.roadStatistics} element={<RoadStatisticsPage />} />
-      <Route path={routes.todoTable} element={<TodoTablePage />} />
+      <Route path={routes.todoTable} element={<TodoPage />} />
       <Route path={routes.errorTest} element={<ErrorTestPage />} />
       <Route path={routes.notFound} element={<NotFound />} />
     </Routes>

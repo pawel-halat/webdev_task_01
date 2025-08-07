@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { ArrowRightIcon } from "../icons";
+import { ArrowRightIcon } from "../../icons";
 
 interface GotoButtonProps {
   to: string;

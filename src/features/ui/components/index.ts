@@ -1,6 +1,12 @@
 export { Table } from "./table/components/table";
 export { MultiSelect } from "./multiselect";
-export { LinkButton } from "./link-button";
+export { LinkButton } from "./buttons/link-button";
 export { ErrorTestComponent } from "./error-test-component";
 export { CardContainer } from "./card/card-container";
 export { CardItem } from "./card/card-item";
+export { Modal } from "./modal";
+export { TextField } from "./text-field";
+export { Button } from "./buttons/button";
+export { Select } from "./select";
+export { NumberField } from "./number-field";
+export type { ModalProps } from "./modal";
