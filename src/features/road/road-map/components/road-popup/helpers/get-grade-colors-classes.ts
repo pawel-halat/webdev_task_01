@@ -1,18 +1,18 @@
-import { GradeType } from "../../../types/grade-types";
+import { GradeValueType } from "../../../types/grade-value-types";
 
-export const getGradeColorClasses = (gradeType: GradeType) => {
+export const getGradeColorClasses = (gradeType: GradeValueType) => {
   switch (gradeType) {
-    case GradeType.EXCELLENT:
+    case GradeValueType.EXCELLENT:
       return "bg-grade-excellent text-grade-excellent-text border-grade-excellent";
-    case GradeType.GOOD:
+    case GradeValueType.GOOD:
       return "bg-grade-good text-grade-good-text border-grade-good";
-    case GradeType.FAIR:
+    case GradeValueType.FAIR:
       return "bg-grade-fair text-grade-fair-text border-grade-fair";
-    case GradeType.POOR:
+    case GradeValueType.POOR:
       return "bg-grade-poor text-grade-poor-text border-grade-poor";
-    case GradeType.VERY_POOR:
+    case GradeValueType.VERY_POOR:
       return "bg-grade-very-poor text-grade-very-poor-text border-grade-very-poor";
-    case GradeType.NO_GRADE:
+    case GradeValueType.NO_GRADE:
     default:
       return "bg-neutral-100 text-neutral-800 border-neutral-200";
   }

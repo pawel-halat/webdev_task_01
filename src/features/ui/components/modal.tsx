@@ -2,22 +2,21 @@ import React, { useEffect } from "react";
 
 export interface ModalProps {
   isOpen: boolean;
-  onClose: () => void;
   title?: string;
   children: React.ReactNode;
   size?: "sm" | "md" | "lg" | "xl";
   showCloseButton?: boolean;
+  onClose: () => void;
 }
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
-  onClose,
   title,
   children,
   size = "md",
   showCloseButton = true,
+  onClose,
 }) => {
-  // Handle escape key press
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape" && isOpen) {

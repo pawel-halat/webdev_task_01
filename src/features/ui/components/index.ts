@@ -9,4 +9,3 @@ export { TextField } from "./text-field";
 export { Button } from "./buttons/button";
 export { Select } from "./select";
 export { NumberField } from "./number-field";
-export type { ModalProps } from "./modal";

@@ -1,13 +1,13 @@
 import { type FC } from "react";
 
-import { GradeType } from "../types/grade-types";
+import { GradeValueType } from "../types/grade-value-types";
 
 interface Props {
   name?: string;
   grade?: number;
   gradeLabel: string;
   gradeColor: string;
-  gradeType: GradeType;
+  gradeType: GradeValueType;
 }
 
 export const RoadTooltip: FC<Props> = ({
@@ -29,7 +29,7 @@ export const RoadTooltip: FC<Props> = ({
       </span>
     </div>
 
-    {grade && gradeType !== GradeType.NO_GRADE && (
+    {grade && gradeType !== GradeValueType.NO_GRADE && (
       <div className="text-tertiary">Score: {grade.toFixed(2)}</div>
     )}
 

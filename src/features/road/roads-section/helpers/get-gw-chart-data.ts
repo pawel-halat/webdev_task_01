@@ -3,20 +3,20 @@ import { countBy } from "lodash";
 import { gradeRanges } from "../../../shared/const/colors.const";
 import type { Road } from "../types/road.types";
 import type { PieChartDataItem } from "../../../ui/components/charts/pie-chart/types/piechart-data-item";
-import { GradeType } from "../../road-map/types/grade-types";
+import { GradeValueType } from "../../road-map/types/grade-value-types";
 
 export const getGwChartData = (
   roadsData?: GeoJSON.FeatureCollection
 ): PieChartDataItem[] => {
   const getGradeCategory = (grade?: number): string => {
-    if (!grade) return GradeType.NO_GRADE;
+    if (!grade) return GradeValueType.NO_GRADE;
 
     for (const [key, range] of Object.entries(gradeRanges)) {
       if (grade >= range.min && grade <= range.max) {
         return key;
       }
     }
-    return GradeType.NO_GRADE;
+    return GradeValueType.NO_GRADE;
   };
 
   return roadsData?.features

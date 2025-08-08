@@ -6,17 +6,19 @@ import { useGetRoadsData } from "../../hooks/use-get-roads-data.query";
 import { useTransformMapPopup } from "../hooks/use-feature-map.hook";
 import { roadTypesSignature } from "../../../shared/const/colors.const";
 import { filterRoadFeatures } from "../helpers/geojson.helper";
-import { GradeType } from "../types/grade-types";
+import { GradeValueType } from "../types/grade-value-types";
 import { RoadMapLoading } from "./road-map-loading";
 import { RoadMapLegend } from "./road-map-legend";
 import { RoadMapError } from "./road-map-error";
 import { MapTile } from "./map-tile";
+import { GradeType } from "../types";
 
 interface RoadMapProps {
   center?: [number, number];
   zoom?: number;
   height?: string;
-  selectedGrades?: GradeType[];
+  selectedGrades?: GradeValueType[];
+  gradeType: GradeType;
 }
 
 export const RoadMap: FC<RoadMapProps> = ({
@@ -24,6 +26,7 @@ export const RoadMap: FC<RoadMapProps> = ({
   zoom,
   height,
   selectedGrades,
+  gradeType,
 }: RoadMapProps) => {
   const {
     data: roadsData,
@@ -60,26 +63,35 @@ export const RoadMap: FC<RoadMapProps> = ({
             <MapTile />
             {roadsData && (
               <>
-                {filteredRoadTypes.map(({ grade, color, label }) => (
-                  <GeoJSON
-                    key={`${grade}-roads-${roadsData.features.length}`}
-                    data={filterRoadFeatures(roadsData, grade)}
-                    style={{
-                      color,
-                      weight: 4,
-                      opacity: 0.8,
-                    }}
-                    onEachFeature={(feature, layer) => {
-                      handleFeatureInteraction(
-                        feature,
-                        layer,
+                {filteredRoadTypes.map(({ grade, color, label }) => {
+                  const geoJsonData = filterRoadFeatures(
+                    roadsData,
+                    grade,
+                    gradeType
+                  );
+                  const geoJsonKey = `${grade}-${gradeType}`;
+
+                  return (
+                    <GeoJSON
+                      key={geoJsonKey}
+                      data={geoJsonData}
+                      style={{
                         color,
-                        grade,
-                        label
-                      );
-                    }}
-                  />
-                ))}
+                        weight: 4,
+                        opacity: 0.8,
+                      }}
+                      onEachFeature={(feature, layer) => {
+                        handleFeatureInteraction(
+                          feature,
+                          layer,
+                          color,
+                          grade,
+                          label
+                        );
+                      }}
+                    />
+                  );
+                })}
               </>
             )}
           </MapContainer>

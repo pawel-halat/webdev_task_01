@@ -1,7 +1,7 @@
-import type { GradeType } from "./grade-types";
+import type { GradeValueType } from "./grade-value-types";
 
 export type RoadTypeSignature = {
-  grade: GradeType;
+  grade: GradeValueType;
   color: string;
   label: string;
 };

@@ -12,7 +12,11 @@ type Props = {
   onClose: () => void;
 };
 
-export const AddTodoForm: FC<Props> = ({ onSubmit, isPending }) => {
+export const AddTodoForm: FC<Props> = ({
+  onSubmit,
+  isPending,
+  onClose: onCloseForm,
+}) => {
   const todoForm = useAddTodoForm();
 
   const { control } = todoForm;
@@ -24,7 +28,7 @@ export const AddTodoForm: FC<Props> = ({ onSubmit, isPending }) => {
 
   const onClose = () => {
     todoForm.reset();
-    onClose();
+    onCloseForm();
   };
 
   return (

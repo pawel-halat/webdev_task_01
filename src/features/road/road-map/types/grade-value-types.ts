@@ -1,4 +1,4 @@
-export enum GradeType {
+export enum GradeValueType {
   EXCELLENT = "excellent",
   GOOD = "good",
   FAIR = "fair",

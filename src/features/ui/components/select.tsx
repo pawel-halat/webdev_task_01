@@ -1,20 +1,21 @@
 import type { FC } from "react";
 import { useState } from "react";
+import { DropdownIcon } from "../icons";
 
 type SelectOption = {
   label: string;
   value: string;
 };
 
-type SelectProps = {
+type SelectProps<T = string> = {
   options: SelectOption[];
-  value?: string;
+  value?: T;
   label?: string;
   placeholder?: string;
   errorMessage?: string;
   className?: string;
   disabled?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 };
 
 export const Select: FC<SelectProps> = ({
@@ -46,7 +47,9 @@ export const Select: FC<SelectProps> = ({
         aria-expanded={open}
       >
         <span>{selectedOption ? selectedOption.label : placeholder}</span>
-        <span className="ml-2">▼</span>
+        <span className="ml-2">
+          <DropdownIcon isOpen={open} />
+        </span>
       </div>
       {open && !disabled && (
         <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded shadow z-10">

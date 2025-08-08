@@ -1,5 +1,6 @@
 import { gradeRanges } from "../../../shared/const/colors.const";
-import { GradeType } from "../types/grade-types";
+import type { GradeType } from "../types";
+import { GradeValueType } from "../types/grade-value-types";
 
 const createFeatureCollection = (
   features: GeoJSON.Feature[]
@@ -10,8 +11,8 @@ const createFeatureCollection = (
   };
 };
 
-const isGradeInRange = (category: GradeType, grade?: number): boolean => {
-  if (category === GradeType.NO_GRADE) {
+const isGradeInRange = (category: GradeValueType, grade?: number): boolean => {
+  if (category === GradeValueType.NO_GRADE) {
     return !grade;
   }
   if (!grade) return false;
@@ -23,15 +24,12 @@ const isGradeInRange = (category: GradeType, grade?: number): boolean => {
 
 export const filterRoadFeatures = (
   featureCollection: GeoJSON.FeatureCollection,
-  grade: GradeType
+  grade: GradeValueType,
+  gradeType: GradeType
 ): GeoJSON.FeatureCollection =>
   createFeatureCollection(
     featureCollection.features.filter((f) => {
-      const g =
-        f.properties?.eemi_grade?.gw ||
-        f.properties?.eemi_grade?.twrio ||
-        f.properties?.eemi_grade?.riss;
-
+      const g = f.properties?.eemi_grade?.[gradeType];
       return isGradeInRange(grade, g);
     })
   );

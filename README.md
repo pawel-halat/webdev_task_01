@@ -70,3 +70,4 @@ The `docker.sh` script provides the following commands:
 - I haven't used shadcn cause it was not described in requirements (just Tailwind).
 - The project architecture wasn't described so i have selected custom architecture (Screaming architecture)
 - I couldn't find api pagination for table so i have created FE side pagination
+- I have relocated roads table and graphs into separate page. I cant imagine go wo put it into sidebar.

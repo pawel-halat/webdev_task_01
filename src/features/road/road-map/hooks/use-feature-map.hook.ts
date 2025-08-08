@@ -2,7 +2,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { Layer } from "leaflet";
 
-import { GradeType } from "../types/grade-types";
+import { GradeValueType } from "../types/grade-value-types";
 import { RoadPopup } from "../components/road-popup/road-popup";
 import { RoadTooltip } from "../components/road-tooltip";
 
@@ -22,7 +22,7 @@ export const useTransformMapPopup = () => {
     feature: Feature,
     layer: Layer,
     color: string,
-    grade: GradeType,
+    grade: GradeValueType,
     label: string
   ) => {
     const { name, eemi_grade = {} } = feature.properties || {};

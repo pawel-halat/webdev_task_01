@@ -1,12 +1,12 @@
 import { type FC } from "react";
 
-import { GradeType } from "../../types/grade-types";
+import { GradeValueType } from "../../types/grade-value-types";
 import { getGradeColorClasses } from "./helpers/get-grade-colors-classes";
 
 interface Props {
   name?: string;
   grade?: number;
-  gradeType: GradeType;
+  gradeType: GradeValueType;
   label: string;
 }
 
@@ -35,7 +35,7 @@ export const RoadPopup: FC<Props> = ({ name, grade, gradeType }) => {
           EEMI Evaluation
         </div>
 
-        {gradeType !== GradeType.NO_GRADE ? (
+        {gradeType !== GradeValueType.NO_GRADE ? (
           <div className="flex items-center gap-3">
             <span
               className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium border ${gradeColorClasses}`}

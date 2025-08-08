@@ -10,3 +10,4 @@ export { ArrowRightIcon } from "./arrow-right-icon";
 export { CheckIcon } from "./check-icon";
 export { CarIcon } from "./car-icon";
 export { ClipboardListIcon } from "./clipboard-list-icon";
+export { DropdownIcon } from "./dropdown-icon";
